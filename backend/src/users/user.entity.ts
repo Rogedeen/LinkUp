@@ -1,5 +1,5 @@
 import { Entity, PrimaryGeneratedColumn, Column, OneToMany } from 'typeorm';
-import { Attendance } from '../events/attendance.entity'; // Attendance'ı import etmeyi unutma!
+import { Attendance } from '../events/attendance.entity';
 
 export enum UserRole {
     ADMIN = 'admin',
@@ -20,10 +20,9 @@ export class User {
     @Column()
     password: string;
 
-    @Column({ type: 'simple-enum', enum: UserRole, default: UserRole.USER })
-    role: UserRole;
+    @Column({ default: 'user' })
+    role: string;
 
-    // HATA ÇÖZÜMÜ: User tarafındaki eksik bağlantı
     @OneToMany(() => Attendance, (attendance) => attendance.user)
     attendances: Attendance[];
 }

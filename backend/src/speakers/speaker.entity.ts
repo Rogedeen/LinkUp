@@ -15,7 +15,6 @@ export class Speaker {
     @Column()
     expertise: string;
 
-    // Bire-Çok İlişki (1:N): Bir konuşmacı birden fazla etkinliğe katılabilir 
     @OneToMany(() => AppEvent, (event) => event.speaker)
     events: AppEvent[];
 }

@@ -1,4 +1,4 @@
-import { Controller, Get, Post, Delete, Body, Param, Patch } from '@nestjs/common'; // Patch eklendi
+import { Controller, Get, Post, Delete, Body, Param, Patch } from '@nestjs/common'; 
 import { SpeakersService } from './speakers.service';
 
 @Controller('speakers')

@@ -11,11 +11,8 @@ export class SpeakersService {
     create(data: any) { return this.repo.save(this.repo.create(data)); }
     remove(id: number) { return this.repo.delete(id); }
 
-    // Servislerin içindeki update metodu
     async update(id: number, data: any) {
-        // Önce id ile veriyi bulup üzerine gelen yeni veriyi yazıyoruz
         await this.repo.update(id, data);
-        // Güncel halini geri döndürüyoruz
         return this.repo.findOne({ where: { id } as any });
     }
 }

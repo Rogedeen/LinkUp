@@ -7,7 +7,6 @@ export class AuthController {
 
     @Post('register')
     register(@Body() body: any) {
-        // body içindeki her şeyi tek bir paket (obje) olarak gönderiyoruz
         return this.authService.register(body);
     }
 

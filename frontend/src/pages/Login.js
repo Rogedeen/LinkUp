@@ -11,19 +11,14 @@ export default function Login() {
     const handleLogin = async (e) => {
         e.preventDefault();
         try {
-            // formData içinden username ve password'ü alıyoruz
             const { username, password } = formData;
-
-            // İsteği gönderiyoruz ve cevabı 'response' değişkenine atıyoruz
             const response = await api.post('/auth/login', { username, password });
 
-            // Bilgileri yerel hafızaya kaydediyoruz
             localStorage.setItem('token', response.data.access_token);
             localStorage.setItem('role', response.data.role);
             localStorage.setItem('username', response.data.username);
-            localStorage.setItem('userId', response.data.id); // Artık backend'den ID geliyor!
+            localStorage.setItem('userId', response.data.id); 
 
-            alert("Giriş başarılı! 🚀");
             navigate('/dashboard');
         } catch (err) {
             console.error("Giriş hatası:", err);

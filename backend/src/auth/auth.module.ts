@@ -8,8 +8,8 @@ import { JwtModule } from '@nestjs/jwt';
     imports: [
         UsersModule,
         JwtModule.register({
-            secret: 'ozel-anahtar-123', // Sunumda "Hocam normalde bu þifre gizli tutulur" dersin.
-            signOptions: { expiresIn: '1d' }, // Anahtar 1 gün geçerli olsun
+            secret: 'ozel-anahtar-123', 
+            signOptions: { expiresIn: '1d' }, 
         }),
     ],
     providers: [AuthService],

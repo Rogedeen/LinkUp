@@ -24,16 +24,13 @@ export class EventsService {
     async create(createEventDto: any) {
         const { speakerId, categoryId, ...eventData } = createEventDto;
 
-        // TypeORM create işlemi
         const newEvent = (this.repo.create(eventData as object) as unknown) as AppEvent;
 
-        // İlişkileri kur
         if (speakerId) newEvent.speaker = { id: Number(speakerId) } as any;
         if (categoryId) newEvent.category = { id: Number(categoryId) } as any;
 
-        // HATAYI ÇÖZEN KISIM: Eğer tarih veya konum boşsa varsayılan değer ata
         if (!newEvent.date) {
-            newEvent.date = new Date().toISOString().split('T')[0]; // Bugünün tarihi (YYYY-MM-DD)
+            newEvent.date = new Date().toISOString().split('T')[0]; 
         }
         if (!newEvent.location) {
             newEvent.location = "Belirtilmemiş / Online";
@@ -69,7 +66,6 @@ export class EventsService {
             where: { event: { id: eventId }, user: { id: userId } }
         });
 
-        // EĞER VARSA HATA FIRLAT
         if (existing) {
             throw new ConflictException('Bu etkinliğe zaten kayıtlısınız.');
         }

@@ -23,7 +23,6 @@ export class AppEvent {
     @ManyToOne(() => Category, (category) => category.events, { onDelete: 'SET NULL' })
     category: Category;
 
-    // Sadece OneToMany kalsın, JoinTable olmasın!
     @OneToMany(() => Attendance, (attendance) => attendance.event)
     attendances: Attendance[];
 }

@@ -66,7 +66,6 @@ export default function Dashboard() {
             const currentUserId = localStorage.getItem('userId');
             await api.post(`/events/${eventId}/join`, { userId: parseInt(currentUserId) });
             await fetchData();
-            alert("Etkinliğe katıldınız! ✅");
         } catch (err) {
             console.warn("409 Yakalandı - Veri senkronize ediliyor...");
             await fetchData();

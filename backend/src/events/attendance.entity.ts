@@ -4,7 +4,7 @@ import { AppEvent } from './event.entity';
 
 @Entity()
 export class Attendance {
-    @PrimaryGeneratedColumn() // Tek Primary Key bu olmalı
+    @PrimaryGeneratedColumn() 
     id: number;
 
     @Column({ default: () => 'CURRENT_TIMESTAMP' })

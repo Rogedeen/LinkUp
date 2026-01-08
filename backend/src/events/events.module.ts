@@ -4,7 +4,7 @@ import { EventsService } from './events.service';
 import { EventsController } from './events.controller';
 import { AppEvent } from './event.entity';
 import { Attendance } from './attendance.entity';
-import { User } from '../users/user.entity'; // User entity yolunu kontrol et
+import { User } from '../users/user.entity'; 
 
 @Module({
     imports: [

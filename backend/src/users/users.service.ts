@@ -10,14 +10,11 @@ export class UsersService {
         private usersRepository: Repository<User>,
     ) { }
 
-    // Burayý bu þekilde güncelle: create() adýmýný atlayýp direkt save() yapýyoruz
-    // Bu sayede TypeScript dönüþ tipinden emin oluyor
-    async create(userData: any): Promise<User> {
-        const newUser = this.usersRepository.create(userData as User); // Tipini zorladýk
-        return this.usersRepository.save(newUser);
+    async create(userData: any): Promise<any> {
+        return this.usersRepository.save(userData);
     }
 
-    async findOne(username: string): Promise<User | null> {
+    async findOne(username: string): Promise<any> {
         return this.usersRepository.findOne({ where: { username } });
     }
 }

@@ -6,6 +6,6 @@ import { User } from './user.entity';
 @Module({
     imports: [TypeOrmModule.forFeature([User])],
     providers: [UsersService],
-    exports: [UsersService], // BURASI ÇOK ÖNEMLÝ: AuthModule kullanabilsin diye dýþa açýyoruz.
+    exports: [UsersService], 
 })
 export class UsersModule { }
