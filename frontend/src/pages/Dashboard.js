@@ -1,7 +1,7 @@
 import { useState, useEffect, useCallback } from 'react';
 import { Button, TextInput, Select, Card, Modal } from 'flowbite-react';
 import {
-    HiUserAdd, /*HiTrash,*/ HiCalendar, HiTag, HiCheckCircle, HiChevronRight, HiXCircle
+    HiUserAdd, /*HiTrash,*/ HiCalendar, HiTag, HiCheckCircle, HiChevronRight, HiXCircle, HiLink
 } from 'react-icons/hi'; 
 import { useNavigate } from 'react-router-dom';
 import api from '../api';
@@ -123,7 +123,7 @@ export default function Dashboard() {
     return (
         <div className={`min-h-screen pb-20 font-sans transition-colors duration-500 ${userRole === 'admin' ? 'bg-slate-200' : 'bg-sky-100'}`}>
             <nav className="bg-white border-b border-slate-200 p-4 flex justify-between items-center sticky top-0 z-40 shadow-sm">
-                <div className="flex items-center gap-2 font-black text-indigo-700 tracking-tighter"><HiCalendar size={28} /> LinkUp </div>
+                <div className="flex items-center gap-2 font-black text-indigo-700 tracking-tighter"><HiLink size={28} /> LinkUp </div>
                 <div className="flex items-center gap-4">
                     <p className="text-sm font-bold text-slate-600">{username} ({userRole})</p>
                     <Button size="xs" color="failure" onClick={() => { localStorage.clear(); navigate('/login'); }} pill className="font-bold">Çıkış</Button>

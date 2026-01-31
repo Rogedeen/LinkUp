@@ -3,14 +3,15 @@
     "",
     "\\backend",
     "\\backend\\src",
+    "\\backend\\src\\auth",
     "\\backend\\src\\categories",
+    "\\backend\\src\\events",
     "\\backend\\src\\speakers",
     "\\backend\\src\\users",
     "\\frontend",
-    "\\frontend\\public",
     "\\frontend\\src",
     "\\frontend\\src\\pages"
   ],
-  "SelectedNode": "\\frontend\\src\\pages\\Dashboard.js",
+  "SelectedNode": "\\backend\\src\\events\\events.service.ts",
   "PreviewInSolutionExplorer": false
 }
