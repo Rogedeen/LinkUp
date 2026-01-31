@@ -6,6 +6,14 @@ Admin Role: Fully coordinates the event ecosystem, including categories, speaker
 
 Participant Role: Enables users to discover events and manage their registrations with a single click.
 
+## 📸 App Screenshots
+
+### 📅 Participant Role
+![Events Screen](screenshots/katılımcı.png)
+
+### 📊 Management Dashboard
+![Dashboard Screen](screenshots/yönetici.png)
+
 # 🛠️ Tech Stack
 The project utilizes modern software engineering principles to ensure scalability and security:
 
